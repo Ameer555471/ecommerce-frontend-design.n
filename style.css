@@ -1,0 +1,647 @@
+/* ============================================
+   ShopEasy — style.css
+   File location: css/style.css
+   ============================================ */
+
+/* === RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================
+   NAVBAR / HEADER
+   ============================================ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 60px;
+  background: #111;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f0a500;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.menu a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 6px 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #f0a500;
+  border-bottom-color: #f0a500;
+}
+
+/* Search */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search input {
+  padding: 8px 14px;
+  border: 1.5px solid #444;
+  border-radius: 4px;
+  background: #222;
+  color: #fff;
+  font-size: 0.88rem;
+  width: 200px;
+  transition: border-color 0.2s;
+}
+
+.search input:focus {
+  outline: none;
+  border-color: #f0a500;
+}
+
+.search input::placeholder {
+  color: #888;
+}
+
+.search-btn {
+  padding: 8px 16px;
+  background: #f0a500;
+  color: #111;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background: #d4920a;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  text-align: center;
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 28px;
+}
+
+.hero-btn {
+  padding: 13px 32px;
+  background: #f0a500;
+  color: #111;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.hero-btn:hover {
+  background: #d4920a;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   SECTION TITLE
+   ============================================ */
+.section-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 28px;
+}
+
+/* ============================================
+   CATEGORIES
+   ============================================ */
+.categories {
+  padding: 50px 60px;
+  background: #fff;
+}
+
+.category-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 32px;
+  background: #f5f5f5;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  min-width: 110px;
+}
+
+.category-card:hover {
+  border-color: #f0a500;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.cat-icon {
+  font-size: 2rem;
+}
+
+.category-card p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ============================================
+   PRODUCTS SECTION / GRID
+   ============================================ */
+.products-section {
+  padding: 50px 60px;
+  background: #f5f5f5;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  padding: 0 60px 50px;
+  justify-content: center;
+}
+
+/* Product Card */
+.card {
+  background: white;
+  padding: 18px;
+  text-align: center;
+  width: 210px;
+  border-radius: 8px;
+  border: 1.5px solid #e0e0e0;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  border-color: #f0a500;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  background: #eee;
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+/* Badges */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.new-badge {
+  background: #27ae60;
+}
+
+/* Price */
+.price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 12px;
+}
+
+.old-price {
+  font-size: 0.85rem;
+  color: #aaa;
+  text-decoration: line-through;
+  margin-right: 6px;
+  font-weight: 400;
+}
+
+/* Buy Button */
+.buy-btn {
+  padding: 9px 18px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.buy-btn:hover {
+  background: #f0a500;
+  color: #111;
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   PROMO BANNER
+   ============================================ */
+.promo-banner {
+  background: #1a1a2e;
+  color: #fff;
+  text-align: center;
+  padding: 48px 40px;
+}
+
+.promo-banner h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #f0a500;
+}
+
+/* ============================================
+   PAGE HEADING
+   ============================================ */
+.page-heading {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 30px 60px;
+  text-align: center;
+}
+
+.page-heading h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.page-heading p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+}
+
+.page-heading p a {
+  color: rgba(255,255,255,0.7);
+}
+
+.page-heading p a:hover {
+  color: #f0a500;
+}
+
+/* ============================================
+   FILTER BAR
+   ============================================ */
+.filter-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 18px 60px;
+  background: #fff;
+  border-bottom: 1.5px solid #e0e0e0;
+}
+
+.filter-select {
+  padding: 8px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.87rem;
+  color: #333;
+  background: #fff;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #f0a500;
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 30px 0 50px;
+}
+
+.page-btn {
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.page-btn:hover,
+.page-btn.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* ============================================
+   PRODUCT DETAIL PAGE
+   ============================================ */
+.product-detail {
+  display: flex;
+  gap: 50px;
+  padding: 50px 80px;
+  justify-content: center;
+  align-items: flex-start;
+  background: #fff;
+}
+
+.detail-img img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1.5px solid #e0e0e0;
+}
+
+.detail-info {
+  max-width: 480px;
+}
+
+.detail-info h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.detail-rating {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.detail-rating span {
+  color: #aaa;
+  font-size: 0.82rem;
+}
+
+.detail-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 14px;
+}
+
+.detail-desc {
+  font-size: 0.93rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.detail-options {
+  margin-bottom: 16px;
+}
+
+.detail-options label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.88rem;
+  color: #333;
+}
+
+/* Quantity control */
+.qty-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: fit-content;
+  border: 1.5px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.qty-wrap button {
+  width: 36px;
+  height: 36px;
+  background: #f0f0f0;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.qty-wrap button:hover {
+  background: #111;
+  color: #fff;
+}
+
+.qty-wrap input {
+  width: 48px;
+  height: 36px;
+  text-align: center;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.qty-wrap input::-webkit-inner-spin-button,
+.qty-wrap input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* CTA buttons */
+.detail-btns {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Trust badges row */
+.trust-row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 14px 0;
+  border-top: 1.5px solid #eee;
+  font-size: 0.82rem;
+  color: #555;
+}
+
+/* ============================================
+   REVIEWS SECTION
+   ============================================ */
+.reviews-section {
+  padding: 50px 60px;
+  background: #f5f5f5;
+}
+
+.reviews-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.review-card {
+  background: #fff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  width: 280px;
+}
+
+.reviewer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.reviewer strong {
+  font-size: 0.9rem;
+  color: #222;
+}
+
+.r-date {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.r-stars {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+.review-card p {
+  font-size: 0.86rem;
+  color: #555;
+  line-height: 1.65;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: #111;
+  color: #ccc;
+  padding: 48px 60px 0;
+  margin-top: 0;
+}
+
+.footer-inner {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 36px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.footer-col h4 {
+  color: #f0a500;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.footer-col p,
+.footer-col a {
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 1.8;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: #f0a500;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-copy {
+  text-align: center;
+  padding: 18px 0;
+  font-size: 0.78rem;
+  color: #555;
+}
